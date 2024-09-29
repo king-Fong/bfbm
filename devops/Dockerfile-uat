@@ -1,0 +1,15 @@
+FROM repos-yltest-test.cloud.test/cmcf-harbor-uat/openjdk8:v1
+
+RUN mkdir -p /cmcf-cp/javaagent/logs \
+    && touch /cmcf-cp/javaagent/logs/skywalking-api.log \
+    && useradd --create-home cmcf \
+    && chown -R cmcf:cmcf /cmcf-cp/ \
+    && chmod -R 777 /cmcf-cp/
+USER cmcf
+
+ADD start/target/cmcf-cp.jar /cmcf-cp/cmcf-cp.jar
+ADD devops/ /cmcf-cp/
+
+WORKDIR /cmcf-cp
+
+CMD ["bash", "start.sh"]
