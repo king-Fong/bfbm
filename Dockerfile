@@ -15,6 +15,8 @@ COPY go.* ./
 
 RUN go mod download
 
+RUN go mod tidy
+
 COPY . .
 
 # 构建 Go 应用
