@@ -1,5 +1,5 @@
 # 使用官方 Go 语言基础镜像
-FROM golang:1.22.7 as builder
+FROM golang:latest as builder
 
 ENV GO111MODULE=on \
     GOPROXY=https://goproxy.cn,https://mirrors.aliyun.com/goproxy/,https://goproxy.tuna.tsinghua.edu.cn,direct \
