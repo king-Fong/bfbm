@@ -18,4 +18,4 @@ RUN go build main.go
 
 # 暴露端口
 EXPOSE 9080
-ENTRYPOINT ["./main"]
+ENTRYPOINT ["../main"]
