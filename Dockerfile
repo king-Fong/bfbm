@@ -32,4 +32,4 @@ COPY --from=builder /my-go-app /usr/local/bin/my-go-app
 EXPOSE 9080
 
 # 运行应用
-CMD ["/my-go-app"]
+CMD ["/usr/local/bin/my-go-app"]
