@@ -14,7 +14,7 @@ WORKDIR /bfbm-app
 COPY ../ .
 
 # 将我们的代码编译成二进制可执行文件app
-RUN go build main.go
+RUN go build ../main.go
 
 # 暴露端口
 EXPOSE 9080
