@@ -1,5 +1,5 @@
 # 使用官方 Go 语言基础镜像
-FROM golang:latest as builder
+FROM golang:1.22.7 as builder
 
 ENV GO111MODULE=on \
     GOPROXY=https://goproxy.cn,https://mirrors.aliyun.com/goproxy/,https://goproxy.tuna.tsinghua.edu.cn,direct \
@@ -11,9 +11,11 @@ ENV GO111MODULE=on \
 WORKDIR /app
 
 # 复制源代码
-COPY . .
+COPY go.* ./
 
 RUN go mod download
+
+COPY . .
 
 # 构建 Go 应用
 RUN go build -o /my-go-app
