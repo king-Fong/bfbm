@@ -2,7 +2,7 @@
 FROM golang:latest as builder
 
 ENV GO111MODULE=on \
-    GOPROXY=https://goproxy.cn,direct \
+    GOPROXY=https://goproxy.cn,https://mirrors.aliyun.com/goproxy/,https://goproxy.tuna.tsinghua.edu.cn,direct \
     CGO_ENABLED=0 \
     GOOS=linux \
     GOARCH=amd64
