@@ -1,11 +1,18 @@
 # 使用官方 Go 语言基础镜像
 FROM golang:latest as builder
 
+ENV GO111MODULE=on \
+    GOPROXY=https://goproxy.cn,direct \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
+
 # 设置工作目录
 WORKDIR /app
 
 # 复制 go.* 文件，用于缓存依赖
 COPY go.* ./
+
 RUN go mod download
 
 # 复制源代码
