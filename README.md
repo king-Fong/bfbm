@@ -32,3 +32,8 @@ ERROR: failed to solve: process "/bin/sh -c go build -o /my-go-app" did not comp
 go mod vendor note:
 1. 用于将依赖复制到vendor目录，保证本地依赖的稳定性。
 2. 使用 go build -mod=vendor main.go 来指定本地依赖进行构建项目
+
+
+gin 的一些使用格式
+路径格式：user-list/
+响应体:{"message": "success", "code": "200", "data": "data.."}
