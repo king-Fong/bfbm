@@ -29,7 +29,7 @@ FROM alpine:3.14.2
 COPY --from=builder /my-go-app /usr/local/bin/my-go-app
 
 # 暴露端口
-EXPOSE 9080
+EXPOSE 8888
 
 # 运行应用
 CMD ["/usr/local/bin/my-go-app"]
