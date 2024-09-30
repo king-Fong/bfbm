@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM golang:latest
 
 # 环境变量
 ENV GO111MODULE=on \
