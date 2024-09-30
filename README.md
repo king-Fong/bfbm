@@ -27,3 +27,8 @@ Dockerfile:19
 ERROR: failed to solve: process "/bin/sh -c go build -o /my-go-app" did not complete successfully: exit code: 1
 ```
 答： go.sum需要加入仓库管理，一并copy到docker镜像中
+
+
+go mod vendor note:
+1. 用于将依赖复制到vendor目录，保证本地依赖的稳定性。
+2. 使用 go build -mod=vendor main.go 来指定本地依赖进行构建项目
