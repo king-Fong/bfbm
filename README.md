@@ -37,3 +37,8 @@ go mod vendor note:
 gin 的一些使用格式
 路径格式：user-list/
 响应体:{"message": "success", "code": "200", "data": "data.."}
+
+ssh
+```shell
+ssh username@remote_host
+```
