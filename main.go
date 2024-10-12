@@ -19,10 +19,12 @@ func main() {
 
 	//启动web服务
 	ginServer := gin.Default()
+	//测试接口
 	ginServer.GET("/hello", func(context *gin.Context) {
 		context.JSON(200, gin.H{"message": "ok!", "code": "200"})
 	})
-	if err := ginServer.Run(fmt.Sprint(`:`, port)); err != nil {
+
+	if err = ginServer.Run(fmt.Sprint(`:`, port)); err != nil {
 		panic(err)
 	}
 
